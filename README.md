@@ -21,7 +21,7 @@ Technologies like Dataloader help solve for this by allowing you to fetch nested
 in one query per entity type, but this doesn't help for filtering or sorting by nested entities
 which require a join to be available in the main query. Also belongs_to associations that only include
 one sub entity are more efficient to join into the main query, and using Dataloader to fetch this
-ads an unnecessary query.
+adds an unnecessary query.
 
 This is where Quarry comes in, named for its ability to "excavate valuable materials". You can specify all the
 filters, loads, and sorts with any level of granularity and at any association level, and Quarry will build a
@@ -39,7 +39,7 @@ or pruning prior to passing user data into Quarry. If you are using graphql this
 defining your schema, but if you are mapping url params in a json api, you'll want to do some pre-checking of
 authorized fields before converting them to atoms and passing them into Quarry. Quarry allows filtering by any
 field or association on a schema and you may not want this. It would also be wise to do this checking before
-converting into atoms since a user could theoretically pass a huge amount of bad keys and fill of the Beam atom store.
+converting into atoms since a user could theoretically pass a huge amount of bad keys and fill up the Beam atom store.
 
 ## Installation
 
@@ -55,7 +55,7 @@ end
 
 ## Examples
 
-Quarry has two functions `Quarry.build/2` and `Quarry.build!/2`, the later simply returning an `Ecto.Query` and the later returning a tuple with the query, and a list of errors, denoting requested associations that not found on the schemas.
+Quarry has two functions `Quarry.build/2` and `Quarry.build!/2`, the later simply returning an `Ecto.Query` and the former returning a tuple with the query, and a list of errors, denoting requested associations that not found on the schemas.
 
 ### Loading
 ```elixir
